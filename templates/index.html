@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>My Chat</title>
     <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- jQuery -->
@@ -51,10 +51,24 @@
                         Hello! How can I help you today?
                     </div>
                 </div>
+                <div class="chat-message">
+                    <div class="message-text user">
+                        {{ text }}
+                    </div>
+                </div>
+
+                <div class="chat-message">
+                    <div class="message-text bot">
+                        {{ response }}
+                    </div>
+                </div>
 
                 <div class="chat-input">
-                    <input type="text" class="form-control" placeholder="Type your message...">
-                    <button type="button" class="btn btn-primary">Send</button>
+                    <form action="" method="POST">
+                        <input type="text" name="text" class="form-control" placeholder="Type your message...
+                        " autocomplete="off" >
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
                 </div>
             </div>
         </div>
