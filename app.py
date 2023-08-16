@@ -28,21 +28,20 @@ def index():
 
     # Call the OpenAI API to generate a response
     response = openai.ChatCompletion.create(
-        engine="newturbs",
-        prompt=message,
-        temperature=0.7,
-        max_tokens=800,
-        top_p=0.95,
-        frequency_penalty=0,
-        presence_penalty=0,
-        stop=None
+    engine="newturbs", # engine = "deployment_name".
+    messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": "Does Azure OpenAI support customer managed keys?"},
+            {"role": "assistant", "content": "Yes, customer managed keys are supported by Azure OpenAI."},
+            {"role": "user", "content": message}
+        ]
     )
 
     # Extract the response text from the API response
-    response = response.choices[0].text.strip()
+    response = response['choices'][0]['message']['content']
 
     # Return the response as a JSON object
-    return jsonify({'response': response})
+    return render_template('index.html', response=response, message=message)
 
 if __name__ == '__main__':
     app.run(debug=True)
