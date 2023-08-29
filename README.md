@@ -44,7 +44,9 @@ Before you begin, ensure you have the following prerequisites:
    git clone https://github.com/BethanyJep/Lesson-Planning-with-AOI.git
    cd Lesson-Planning-with-AOI
  ```
-2. Setup Backend 
+--- 
+2. Setup Backend
+ 
 ```sh
 cd backend
 pip install -r requirements.txt
@@ -55,12 +57,12 @@ python manage.py runserver
 ---
 
 3. Setup the Frontend
-   ```sh
+```sh
   cd frontend
   npm install
   # Configure API endpoint in src/config.js
   npm start
-  ```
+```
 
 ## Usage
 
