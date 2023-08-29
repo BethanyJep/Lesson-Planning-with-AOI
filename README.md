@@ -43,11 +43,11 @@ Before you begin, ensure you have the following prerequisites:
    ```sh
    git clone https://github.com/BethanyJep/Lesson-Planning-with-AOI.git
    cd Lesson-Planning-with-AOI
- ```
+   ```
 --- 
 2. Setup Backend
  
-```sh
+```python
 cd backend
 pip install -r requirements.txt
 # Configure database and API settings in config.py
