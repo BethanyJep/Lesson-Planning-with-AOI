@@ -3,6 +3,7 @@
 from flask import Flask, request, jsonify, render_template
 import os
 import openai
+import pandas as pd
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -23,6 +24,8 @@ def home():
 # Define a route for handling incoming chat messages
 @app.route('/', methods=['POST'])
 def index():
+    df = pd.read_csv("patient_data.csv")
+
     # Get the message from the request body
     message = request.form['text']
 
